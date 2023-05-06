@@ -1,14 +1,17 @@
 ﻿using MongoDB.Driver;
+using Tomi.Domain.Entities;
+using Tomi.Domain.IRepositories;
+using Tomi.Infrastructure.Contexts;
 
 namespace Tomi.Infrastructure.Repositories
 {
-    public class BaseRepository
+    public class BaseRepository<T> : IBaseRepository<T> where T: BaseEntity
     {
         protected readonly IMongoCollection<T> _collection;
 
-        public BaseRepository(IDataContext dataContext, string collectionName)
+        public BaseRepository(IMongoContext mongoContext, string collectionName)
         {
-            _collection = dataContext.GetCollection<T>(collectionName);
+            _collection = mongoContext.GetCollection<T>(collectionName);
         }
 
         public async Task<T> GetByIdAsync(string id)
