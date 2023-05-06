@@ -7,7 +7,7 @@ namespace Tomi.Domain.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int Id { get; set; } 
+        public string Id { get; set; } 
 
     }
 }

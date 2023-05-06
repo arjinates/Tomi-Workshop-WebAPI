@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Tomi.Infrastructure\Tomi.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
