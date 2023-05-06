@@ -1,5 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.Extensions.Configuration;
+using Tomi.Infrastructure.Contexts;
 
+var builder = WebApplication.CreateBuilder(args); 
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
 // Add services to the container.
 
 builder.Services.AddControllers();
