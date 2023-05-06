@@ -8,8 +8,8 @@ using Tomi.Domain.Entities;
 
 namespace Tomi.Application.Features.Products.Queries
 {
-	public class GetAllProductsQuery : IRequest<IEnumerable<Product>>
+	public class GetAllProductsQuery : IRequest<IEnumerable<GetAllProductsViewModel>>
 	{
-		
+		//open for extension
 	}
 }

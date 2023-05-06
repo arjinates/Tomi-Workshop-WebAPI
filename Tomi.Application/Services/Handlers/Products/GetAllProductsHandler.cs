@@ -11,7 +11,7 @@ using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.Products
 {
-	public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery,IEnumerable<Product>>
+	public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery,IEnumerable<GetAllProductsViewModel>>
 	{
 		private readonly IProductRepository _productRepository;
 		private readonly IMapper _mapper;
@@ -22,11 +22,11 @@ namespace Tomi.Application.Services.Handlers.Products
 			_mapper = mapper;
 		}
 
-		public async Task<IEnumerable<Product>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+		public async Task<IEnumerable<GetAllProductsViewModel>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
 		{
-			var products = _mapper.Map<Product>(request);
-
-			return await _productRepository.GetAllAsync();
+			var products = await _productRepository.GetAllAsync();
+			var productViewModel = _mapper.Map<IEnumerable<GetAllProductsViewModel>>(products);
+			return productViewModel;
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Tomi.Application.Features.Products.Queries;
@@ -15,6 +16,7 @@ namespace Tomi.Application.Mappings
 		{
 			CreateMap<GetAllProductsQuery, Product>();
 			CreateMap<Product, GetAllProductsQuery>();
+			CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
 		}
 	}
 }
