@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 using Tomi.Infrastructure.Contexts;
@@ -9,9 +10,10 @@ namespace Tomi.Infrastructure.Repositories
     {
         protected readonly IMongoCollection<T> _collection;
 
-        public BaseRepository(IMongoContext mongoContext, string collectionName)
+        public BaseRepository(IMongoContext mongoContext, IOptions<MongoDbSettings> mongoDbSettings)
         {
-            _collection = mongoContext.GetCollection<T>(collectionName);
+			var collectionName = mongoDbSettings.Value.CollectionNames[typeof(T).Name];
+			_collection = mongoContext.GetCollection<T>(collectionName);
         }
 
         public async Task<T> GetByIdAsync(string id)
