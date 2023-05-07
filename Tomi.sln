@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A562B8B5-D15
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomi.WebAPI", "Tomi.WebAPI\Tomi.WebAPI.csproj", "{558EEDD3-3103-4FF2-94E3-9CF2387F631F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomi.Domain", "Tomi.Domain\Tomi.Domain.csproj", "{BD29BDBF-3FAC-4443-80D9-829FE03D89FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomi.Domain", "Tomi.Domain\Tomi.Domain.csproj", "{BD29BDBF-3FAC-4443-80D9-829FE03D89FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomi.Application", "Tomi.Application\Tomi.Application.csproj", "{F2358C9E-6B4A-4765-8507-F74D1382B536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomi.Application", "Tomi.Application\Tomi.Application.csproj", "{F2358C9E-6B4A-4765-8507-F74D1382B536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomi.Infrastructure", "Tomi.Infrastructure\Tomi.Infrastructure.csproj", "{DDBBB2FA-741F-4AAB-9F23-C66D4860E83B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomi.Infrastructure", "Tomi.Infrastructure\Tomi.Infrastructure.csproj", "{DDBBB2FA-741F-4AAB-9F23-C66D4860E83B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

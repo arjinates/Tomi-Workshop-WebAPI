@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Tomi.Application.Auth.Commands;
 using Tomi.Application.Mappings;
 using Tomi.Application.Services.Handlers.Products;
 
@@ -19,9 +20,11 @@ namespace Tomi.Application
 			services.AddAutoMapper(typeof(GeneralProfile).Assembly);
 			services.AddMediatR(typeof(GetAllProductsHandler).GetTypeInfo().Assembly);
 			services.AddMediatR(typeof(GetProductByIdHandler).GetTypeInfo().Assembly);
-			#region Repositories
+            services.AddMediatR(typeof(AuthenticateCommandHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(RegisterCommandHandler).GetTypeInfo().Assembly);
+            #region Repositories
 
-			#endregion
-		}
+            #endregion
+        }
 	}
 }
