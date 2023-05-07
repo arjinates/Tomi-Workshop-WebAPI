@@ -25,13 +25,13 @@ namespace Tomi.Application.Auth.Commands
                     Email = request.Email,
                     FirstName = request.FirstName,
                     LastName = request.LastName,
-                    PasswordHash = request.Password
+                    UserName = request.UserName
                 };
 
                 var result = await _userManager.CreateAsync(user, request.Password);
                 if (result.Succeeded)
                 {
-                    return new Response<string>(user.Id, message: $"User {user.Id} Registered");
+                    return new Response<string>(user.Id.ToString(), message: $"User {user.Id} Registered");
                 }
                 else
                 {

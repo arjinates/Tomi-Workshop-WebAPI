@@ -11,8 +11,6 @@ namespace Tomi.Application.Auth.Commands
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
 
-        //private readonly SignInManager<IdentityEntity> _signInManager;
-
         public AuthenticateCommandHandler(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
@@ -32,13 +30,12 @@ namespace Tomi.Application.Auth.Commands
             }
 
             AuthenticateResponse response = new AuthenticateResponse();
-            response.Token = "asdasd";
+            response.Token = "jwt token operation can be improved";
             response.FirstName = user.FirstName;
             response.LastName = user.LastName;
             response.Email = user.Email;
 
             return new Response<AuthenticateResponse>(response, $"Authenticated {user.UserName}");
         }
-
     }
 }
