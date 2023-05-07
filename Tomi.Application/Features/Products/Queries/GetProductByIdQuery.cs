@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tomi.Domain.Entities;
 
 namespace Tomi.Application.Features.Products.Queries
 {
-	public class GetAllProductsQuery : IRequest<IEnumerable<ProductModel>>
+	public class GetProductByIdQuery : IRequest<ProductModel>
 	{
-		//open for extension
+		public string Id { get; set; }
 	}
 }

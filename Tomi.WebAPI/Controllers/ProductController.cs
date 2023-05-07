@@ -14,7 +14,13 @@ namespace Tomi.WebAPI.Controllers
 		protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
 		[HttpGet("get-all_products")]
-		public async Task<IActionResult> GetAllProducts([FromQuery] GetAllProductsQuery command)
+		public async Task<IActionResult> GetAllProducts()
+		{
+			return Ok(await Mediator.Send(new GetAllProductsQuery()));
+		}
+
+		[HttpGet("get-product-by-id")]
+		public async Task<IActionResult> GetProductsById([FromQuery] GetProductByIdQuery command)
 		{
 			return Ok(await Mediator.Send(command));
 		}

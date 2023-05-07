@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Tomi.Application.Features.Products.Queries
 {
 	//Response model
-	public class GetAllProductsViewModel
+	public class ProductModel
 	{
 		public string Id { get; set; }
 		public string Name { get; set; }

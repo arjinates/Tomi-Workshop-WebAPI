@@ -16,7 +16,7 @@ namespace Tomi.Application.Mappings
 		{
 			CreateMap<GetAllProductsQuery, Product>();
 			CreateMap<Product, GetAllProductsQuery>();
-			CreateMap<Product, GetAllProductsViewModel>().ReverseMap();
+			CreateMap<Product, ProductModel>().ReverseMap();
 		}
 	}
 }

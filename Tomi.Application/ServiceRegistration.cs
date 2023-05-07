@@ -18,6 +18,7 @@ namespace Tomi.Application
 		{
 			services.AddAutoMapper(typeof(GeneralProfile).Assembly);
 			services.AddMediatR(typeof(GetAllProductsHandler).GetTypeInfo().Assembly);
+			services.AddMediatR(typeof(GetProductByIdHandler).GetTypeInfo().Assembly);
 			#region Repositories
 
 			#endregion
