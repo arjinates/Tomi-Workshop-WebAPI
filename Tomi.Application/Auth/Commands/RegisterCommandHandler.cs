@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
+using MongoDB.Bson;
 using Tomi.Application.ApiResponse;
 using Tomi.Application.Auth.Models;
 using Tomi.Domain.Entities;
@@ -25,7 +26,8 @@ namespace Tomi.Application.Auth.Commands
                     Email = request.Email,
                     FirstName = request.FirstName,
                     LastName = request.LastName,
-                    UserName = request.UserName
+                    UserId = ObjectId.GenerateNewId().ToString(),
+				    UserName = request.UserName
                 };
 
                 var result = await _userManager.CreateAsync(user, request.Password);

@@ -34,6 +34,7 @@ namespace Tomi.Application.Auth.Commands
             response.FirstName = user.FirstName;
             response.LastName = user.LastName;
             response.Email = user.Email;
+            response.UserId = user.UserId;
 
             return new Response<AuthenticateResponse>(response, $"Authenticated {user.UserName}");
         }
