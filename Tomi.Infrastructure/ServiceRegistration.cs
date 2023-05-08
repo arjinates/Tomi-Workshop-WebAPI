@@ -14,6 +14,7 @@ namespace Tomi.Infrastructure
 			#region LifeTime
 			services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 			services.AddTransient<IProductRepository, ProductRepository>();
+			services.AddTransient<IShoppingCartRepository, ShoppingCartRepository>();
 			services.AddTransient(typeof(IMongoContext), typeof(MongoContext));
 			#endregion
 
