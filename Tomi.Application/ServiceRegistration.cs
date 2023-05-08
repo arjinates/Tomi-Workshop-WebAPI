@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Tomi.Application.Auth.Commands;
 using Tomi.Application.Mappings;
 using Tomi.Application.Services.Handlers.Products;
+using Tomi.Application.Services.Handlers.ShoppingCarts;
 
 namespace Tomi.Application
 {
@@ -22,9 +23,10 @@ namespace Tomi.Application
 			services.AddMediatR(typeof(GetProductByIdHandler).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(AuthenticateCommandHandler).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(RegisterCommandHandler).GetTypeInfo().Assembly);
-            #region Repositories
+			services.AddMediatR(typeof(AddToShoppingCartHandler).GetTypeInfo().Assembly);
+			#region Repositories
 
-            #endregion
-        }
+			#endregion
+		}
 	}
 }
