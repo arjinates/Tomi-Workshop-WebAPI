@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Tomi.Application.Features.ShoppingCarts.Commands;
+using Tomi.Application.Features.ShoppingCarts.Queries;
 
 namespace Tomi.WebAPI.Controllers
 {
@@ -10,6 +11,12 @@ namespace Tomi.WebAPI.Controllers
 	{
 		private IMediator _mediator;
 		protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+
+		[HttpGet("get-all-shopping-cart-items")]
+		public async Task<IActionResult> GetAllShoppingCartItemsByUserId([FromQuery] GetAllShoppingCartItemsByUserIdQuery command)
+		{
+			return Ok(await Mediator.Send(command));
+		}
 
 		[HttpPost("add-item-to-shopping-cart")]
 		public async Task<IActionResult> AddItemToShoppingCart(AddItemCommand command)
