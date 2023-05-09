@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Tomi.Application.Features.ShoppingCarts.Commands;
+using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
@@ -59,8 +60,8 @@ namespace Tomi.Application.Services.Handlers.ShoppingCarts
                 {
                     UserId = request.UserId,
                     ProductId = product.Id,
-                    TotalPrice = totalPrice,
-                    TotalCount = totalCount
+					ProductTotalPrice = totalPrice,
+                    ProductCount = totalCount
                 };
 
                 return response;

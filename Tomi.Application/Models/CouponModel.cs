@@ -1,4 +1,4 @@
-﻿namespace Tomi.Application.Features.Coupons.Commands
+﻿namespace Tomi.Application.Models
 {
     public class CouponModel
     {

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Tomi.Application.Models;
 
 namespace Tomi.Application.Features.ShoppingCarts.Commands
 {

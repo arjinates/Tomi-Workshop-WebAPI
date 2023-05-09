@@ -5,14 +5,13 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Tomi.Application.Features.Coupons.Commands;
 using Tomi.Application.Features.Products.Queries;
-using Tomi.Application.Features.ShoppingCarts.Commands;
+using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 
 namespace Tomi.Application.Mappings
 {
-	public class GeneralProfile : Profile
+    public class GeneralProfile : Profile
 	{
 		public GeneralProfile()
 		{
