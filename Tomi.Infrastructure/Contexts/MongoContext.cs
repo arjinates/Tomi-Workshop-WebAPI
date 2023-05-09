@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Tomi.Infrastructure.Settings;
 
 namespace Tomi.Infrastructure.Contexts
 {

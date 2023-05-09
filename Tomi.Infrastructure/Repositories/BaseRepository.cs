@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 using Tomi.Infrastructure.Contexts;
+using Tomi.Infrastructure.Settings;
 
 namespace Tomi.Infrastructure.Repositories
 {

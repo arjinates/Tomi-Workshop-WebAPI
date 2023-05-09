@@ -1,9 +1,9 @@
-﻿namespace Tomi.Infrastructure.Contexts
+﻿namespace Tomi.Infrastructure.Settings
 {
     public class MongoDbSettings
     {
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
-		public Dictionary<string, string> CollectionNames { get; set; }
-	}
+        public Dictionary<string, string> CollectionNames { get; set; }
+    }
 }
