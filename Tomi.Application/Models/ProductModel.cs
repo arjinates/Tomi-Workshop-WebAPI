@@ -14,5 +14,6 @@ namespace Tomi.Application.Models
         public decimal Price { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-    }
+		public double Rating { get; set; }
+	}
 }
