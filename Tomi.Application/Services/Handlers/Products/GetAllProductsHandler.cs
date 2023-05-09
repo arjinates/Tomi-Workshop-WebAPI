@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tomi.Application.Features.Products.Queries;
+using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.Products
 {
-	public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery,IEnumerable<ProductModel>>
+    public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery,IEnumerable<ProductModel>>
 	{
 		private readonly IProductRepository _productRepository;
 		private readonly IMapper _mapper;

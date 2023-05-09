@@ -8,12 +8,13 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Tomi.Application.Features.Products.Queries;
+using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.Products
 {
-	public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, ProductModel>
+    public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, ProductModel>
 	{
 		private readonly IProductRepository _productRepository;
 		private readonly IMapper _mapper;

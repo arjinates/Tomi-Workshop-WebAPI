@@ -2,6 +2,7 @@
 using MediatR;
 using Tomi.Application.Enums.CouponEnums;
 using Tomi.Application.Features.Coupons.Commands;
+using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 

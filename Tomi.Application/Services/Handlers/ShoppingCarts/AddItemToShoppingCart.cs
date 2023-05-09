@@ -2,12 +2,13 @@
 using MediatR;
 using MongoDB.Driver;
 using Tomi.Application.Features.ShoppingCarts.Commands;
+using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.ShoppingCarts
 {
-	public class AddItemToShoppingCart : IRequestHandler<AddItemCommand, ShoppingCartItemModel>
+    public class AddItemToShoppingCart : IRequestHandler<AddItemCommand, ShoppingCartItemModel>
 	{
 		private readonly IShoppingCartRepository _shoppingCartRepository;
 		private readonly IProductRepository _productRepository;
@@ -57,8 +58,8 @@ namespace Tomi.Application.Services.Handlers.ShoppingCarts
 			{
 				UserId = request.UserId,
 				ProductId = product.Id,
-				TotalPrice = totalPrice,
-				TotalCount = totalCount
+				ProductTotalPrice = totalPrice,
+				ProductCount = totalCount
 			};
 
 			return response;
