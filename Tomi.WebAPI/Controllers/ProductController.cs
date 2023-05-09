@@ -8,10 +8,8 @@ namespace Tomi.WebAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ProductController : ControllerBase
+	public class ProductController : BaseController
 	{
-		private IMediator _mediator;
-		protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
 		[HttpGet("get-all-products")]
 		public async Task<IActionResult> GetAllProducts()
