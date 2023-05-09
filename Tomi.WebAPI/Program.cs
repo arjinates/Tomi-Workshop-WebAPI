@@ -24,6 +24,15 @@ var mongoIdentityConfiguration = new MongoDbIdentityConfiguration
 builder.Services.ConfigureMongoDbIdentity<User>(mongoIdentityConfiguration).AddUserManager<UserManager<User>>().AddSignInManager<SignInManager<User>>();
 builder.Services.AddSingleton<ISystemClock, SystemClock>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+    builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); 
+    });
+});
+
 builder.Services.AddAuthentication(x =>
 {
 	x.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -47,6 +56,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 app.UseAuthentication();

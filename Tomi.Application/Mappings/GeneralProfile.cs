@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Tomi.Application.Features.Coupons.Commands;
 using Tomi.Application.Features.Products.Queries;
 using Tomi.Application.Features.ShoppingCarts.Commands;
 using Tomi.Domain.Entities;
@@ -19,6 +20,7 @@ namespace Tomi.Application.Mappings
 			CreateMap<Product, GetAllProductsQuery>();
 			CreateMap<Product, ProductModel>().ReverseMap();
 			CreateMap<ShoppingCart, ShoppingCartItemModel>().ReverseMap();
+			CreateMap<Coupon, CouponModel>().ReverseMap();
 		}
 	}
 }

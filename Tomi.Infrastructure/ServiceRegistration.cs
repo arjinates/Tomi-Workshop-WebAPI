@@ -16,8 +16,9 @@ namespace Tomi.Infrastructure
 			services.AddTransient<IProductRepository, ProductRepository>();
 			services.AddTransient<IShoppingCartRepository, ShoppingCartRepository>();
 			services.AddTransient(typeof(IMongoContext), typeof(MongoContext));
-			#endregion
+            services.AddTransient<ICouponRepository, CouponRepository>();
+            #endregion
 
-		}
+        }
 	}
 }
