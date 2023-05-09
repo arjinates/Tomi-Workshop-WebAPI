@@ -7,7 +7,7 @@ using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.ShoppingCarts
 {
-	public class AddItemToShoppingCart : IRequestHandler<AddItemToShoppingCartCommand, ShoppingCartItemModel>
+	public class AddItemToShoppingCart : IRequestHandler<AddItemCommand, ShoppingCartItemModel>
 	{
 		private readonly IShoppingCartRepository _shoppingCartRepository;
 		private readonly IProductRepository _productRepository;
@@ -18,10 +18,9 @@ namespace Tomi.Application.Services.Handlers.ShoppingCarts
 			_shoppingCartRepository = shoppingCartRepository;
 			_productRepository = productRepository;
 			_mapper = mapper;
-
 		}
 
-		public async Task<ShoppingCartItemModel> Handle(AddItemToShoppingCartCommand request, CancellationToken cancellationToken)
+		public async Task<ShoppingCartItemModel> Handle(AddItemCommand request, CancellationToken cancellationToken)
 		{
 			var shoppingCart = await _shoppingCartRepository.GetByUserIdAsync(request.UserId);
 			var product = await _productRepository.GetByIdAsync(request.ProductId);
