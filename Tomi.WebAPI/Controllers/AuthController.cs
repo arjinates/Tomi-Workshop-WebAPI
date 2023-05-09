@@ -8,10 +8,8 @@ namespace Tomi.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController : BaseController
     {
-        private IMediator _mediator;
-        protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(AuthenticateRequest command)
