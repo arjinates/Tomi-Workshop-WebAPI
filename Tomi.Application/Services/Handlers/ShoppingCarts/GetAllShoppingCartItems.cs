@@ -46,7 +46,12 @@ namespace Tomi.Application.Services.Handlers.ShoppingCarts
 					UserId = request.UserId,
 					ProductId = product.Id,
 					ProductTotalPrice = itemTotalPrice,	
-					ProductCount= item.Count
+					ProductCount = item.Count,
+					Name = product.Name,
+					Price= itemTotalPrice,
+					ImageUrl= product.ImageUrl,
+					Rating = product.Rating
+
 				});
 			}
 
