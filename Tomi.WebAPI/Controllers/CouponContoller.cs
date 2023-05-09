@@ -9,7 +9,6 @@ namespace Tomi.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-	[Authorize]
     public class CouponContoller : BaseController
     {
 
@@ -19,7 +18,8 @@ namespace Tomi.WebAPI.Controllers
 			return Ok(await Mediator.Send(new GetAllCouponsQuery()));
 		}
 
-		[HttpPost("apply-coupon")]
+        [Authorize]
+        [HttpPost("apply-coupon")]
         public async Task<IActionResult> ApplyCouponToShoppingCart(string couponId)
         {
 			var command = new ApplyCouponCommand();
