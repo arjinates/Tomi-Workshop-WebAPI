@@ -27,6 +27,7 @@ namespace Tomi.Application
 			services.AddMediatR(typeof(GetAllShoppingCartItems).GetTypeInfo().Assembly);
 
 			services.AddMediatR(typeof(ApplyCouponHandler).GetTypeInfo().Assembly);
+			services.AddMediatR(typeof(GetAllCouponsHandler).GetTypeInfo().Assembly);
 			#region Repositories
 
 			#endregion

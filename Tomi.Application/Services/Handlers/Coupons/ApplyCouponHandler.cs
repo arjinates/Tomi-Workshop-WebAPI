@@ -8,7 +8,7 @@ using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.Coupons
 {
-    public class ApplyCouponHandler : IRequestHandler<ApplyCouponCommand, CouponModel>
+    public class ApplyCouponHandler : IRequestHandler<ApplyCouponCommand, ApplyCouponModel>
     {
         private readonly ICouponRepository _couponRepository;
         private readonly IShoppingCartRepository _shoppingCartRepository;
@@ -23,7 +23,7 @@ namespace Tomi.Application.Services.Handlers.Coupons
             _productRepository = productRepository;
         }
 
-        public async Task<CouponModel> Handle(ApplyCouponCommand request, CancellationToken cancellationToken)
+        public async Task<ApplyCouponModel> Handle(ApplyCouponCommand request, CancellationToken cancellationToken)
         {
             var coupon = await _couponRepository.GetByCouponIdAsync(request.CouponId);
             if (coupon == null)
@@ -43,7 +43,7 @@ namespace Tomi.Application.Services.Handlers.Coupons
             shoppingCart.CouponId = request.CouponId;
             await _shoppingCartRepository.UpdateAsync(shoppingCart.Id, shoppingCart);
 
-            return new CouponModel
+            return new ApplyCouponModel
             {
                 BasketTotalPrice = basketTotalPrice,
                 CouponId = coupon.CouponId,
