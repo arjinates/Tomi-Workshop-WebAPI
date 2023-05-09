@@ -7,13 +7,13 @@ using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Services.Handlers.ShoppingCarts
 {
-	public class AddToShoppingCartHandler : IRequestHandler<AddItemToShoppingCartCommand, ShoppingCartItemModel>
+	public class AddItemToShoppingCart : IRequestHandler<AddItemToShoppingCartCommand, ShoppingCartItemModel>
 	{
 		private readonly IShoppingCartRepository _shoppingCartRepository;
 		private readonly IProductRepository _productRepository;
 		private readonly IMapper _mapper;
 
-		public AddToShoppingCartHandler(IShoppingCartRepository shoppingCartRepository, IProductRepository productRepository, IMapper mapper)
+		public AddItemToShoppingCart(IShoppingCartRepository shoppingCartRepository, IProductRepository productRepository, IMapper mapper)
 		{
 			_shoppingCartRepository = shoppingCartRepository;
 			_productRepository = productRepository;
