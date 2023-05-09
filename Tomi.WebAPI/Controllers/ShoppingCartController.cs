@@ -16,5 +16,11 @@ namespace Tomi.WebAPI.Controllers
 		{
 			return Ok(await Mediator.Send(command));
 		}
-	}
+
+        [HttpDelete("remove-item-from-shopping-cart")]
+        public async Task<IActionResult> RemoveItemToShoppingCart(RemoveItemFromShoppingCartCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+    }
 	}

@@ -14,13 +14,13 @@ namespace Tomi.WebAPI.Controllers
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromQuery] AuthenticateRequest command)
+        public async Task<IActionResult> Login(AuthenticateRequest command)
         {
             return Ok(await Mediator.Send(command));
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromQuery] RegisterRequest command)
+        public async Task<IActionResult> Register( RegisterRequest command)
         {
             return Ok(await Mediator.Send(command));
         }
