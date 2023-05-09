@@ -15,16 +15,21 @@ namespace Tomi.Application
 		public static void AddApplicationLayer(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddAutoMapper(typeof(GeneralProfile).Assembly);
+
 			services.AddMediatR(typeof(GetAllProductsHandler).GetTypeInfo().Assembly);
 			services.AddMediatR(typeof(GetProductByIdHandler).GetTypeInfo().Assembly);
+
             services.AddMediatR(typeof(AuthenticateCommandHandler).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(RegisterCommandHandler).GetTypeInfo().Assembly);
-			services.AddMediatR(typeof(AddItemToShoppingCart).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(ApplyCouponHandler).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(RemoveAllItemsFromShoppingCart).GetTypeInfo().Assembly);
-            #region Repositories
 
-            #endregion
-        }
+			services.AddMediatR(typeof(AddItemToShoppingCart).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(RemoveAllItemsFromShoppingCart).GetTypeInfo().Assembly);
+			services.AddMediatR(typeof(GetAllShoppingCartItems).GetTypeInfo().Assembly);
+
+			services.AddMediatR(typeof(ApplyCouponHandler).GetTypeInfo().Assembly);
+			#region Repositories
+
+			#endregion
+		}
 	}
 }
