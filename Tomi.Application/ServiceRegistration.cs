@@ -23,10 +23,11 @@ namespace Tomi.Application
 			services.AddMediatR(typeof(GetProductByIdHandler).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(AuthenticateCommandHandler).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(RegisterCommandHandler).GetTypeInfo().Assembly);
-			services.AddMediatR(typeof(AddToShoppingCartHandler).GetTypeInfo().Assembly);
-			#region Repositories
+			services.AddMediatR(typeof(AddItemToShoppingCart).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(RemoveAllItemsFromShoppingCart).GetTypeInfo().Assembly);
+            #region Repositories
 
-			#endregion
-		}
+            #endregion
+        }
 	}
 }

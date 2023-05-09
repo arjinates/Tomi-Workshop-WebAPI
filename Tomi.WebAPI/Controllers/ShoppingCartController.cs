@@ -12,13 +12,19 @@ namespace Tomi.WebAPI.Controllers
 		protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
 
 		[HttpPost("add-item-to-shopping-cart")]
-		public async Task<IActionResult> AddItemToShoppingCart(AddItemToShoppingCartCommand command)
+		public async Task<IActionResult> AddItemToShoppingCart(AddItemCommand command)
 		{
 			return Ok(await Mediator.Send(command));
 		}
 
         [HttpDelete("remove-item-from-shopping-cart")]
-        public async Task<IActionResult> RemoveItemToShoppingCart(RemoveItemFromShoppingCartCommand command)
+        public async Task<IActionResult> RemoveItemToShoppingCart(RemoveItemCommand command)
+        {
+            return Ok(await Mediator.Send(command));
+        }
+
+        [HttpDelete("remove-all-items-from-shopping-cart")]
+        public async Task<IActionResult> RemoveAllItemsFromShoppingCart(RemoveAllItemsCommand command)
         {
             return Ok(await Mediator.Send(command));
         }
