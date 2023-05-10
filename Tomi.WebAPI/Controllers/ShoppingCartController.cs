@@ -31,7 +31,7 @@ namespace Tomi.WebAPI.Controllers
 		}
 
         [HttpDelete("remove-item-from-shopping-cart")]
-        public async Task<IActionResult> RemoveItemToShoppingCart(string productId)
+        public async Task<IActionResult> RemoveItemFromShoppingCart(string productId)
         {
 			var command = new RemoveItemCommand();
 			command.UserId = UserId;
@@ -45,6 +45,14 @@ namespace Tomi.WebAPI.Controllers
 			var command = new RemoveAllItemsCommand();
 			command.UserId = UserId;
 			return Ok(await Mediator.Send(command));
+        }
+        [HttpDelete("remove-item-from-shopping-cart-compeletely")]
+        public async Task<IActionResult> RemoveItemFromShoppingCartCompeletely(string productId)
+        {
+            var command = new RemoveItemCompeletelyCommand();
+            command.UserId = UserId;
+            command.ProductId = productId;
+            return Ok(await Mediator.Send(command));
         }
     }
 	}
