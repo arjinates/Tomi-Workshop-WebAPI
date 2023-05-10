@@ -1,12 +1,8 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Tomi.Application.Auth.Models;
-using Tomi.Application.Features.Products.Queries;
 
 namespace Tomi.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class AuthController : BaseController
     {

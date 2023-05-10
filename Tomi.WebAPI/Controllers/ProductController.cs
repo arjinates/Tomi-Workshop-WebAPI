@@ -6,7 +6,6 @@ using Tomi.Domain.Entities;
 
 namespace Tomi.WebAPI.Controllers
 {
-	[Route("api/[controller]")]
 	[ApiController]
 	public class ProductController : BaseController
 	{

@@ -7,7 +7,6 @@ using Tomi.Domain.Entities;
 
 namespace Tomi.WebAPI.Controllers
 {
-	[Route("api/[controller]")]
 	[ApiController]
 	[Authorize]
 	public class ShoppingCartController : BaseController
@@ -30,7 +29,7 @@ namespace Tomi.WebAPI.Controllers
 			return Ok(await Mediator.Send(command));
 		}
 
-        [HttpDelete("remove-item-from-shopping-cart")]
+        [HttpDelete("decrease-item-amount-in-shopping-cart")]
         public async Task<IActionResult> RemoveItemFromShoppingCart(string productId)
         {
 			var command = new RemoveItemCommand();
@@ -39,7 +38,7 @@ namespace Tomi.WebAPI.Controllers
 			return Ok(await Mediator.Send(command));
 		}
 
-        [HttpDelete("remove-all-items-from-shopping-cart")]
+        [HttpDelete("clear-shopping-cart")]
         public async Task<IActionResult> RemoveAllItemsFromShoppingCart()
         {
 			var command = new RemoveAllItemsCommand();

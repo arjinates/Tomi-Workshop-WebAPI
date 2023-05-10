@@ -7,7 +7,6 @@ using Tomi.Application.Features.ShoppingCarts.Commands;
 
 namespace Tomi.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class CouponContoller : BaseController
     {

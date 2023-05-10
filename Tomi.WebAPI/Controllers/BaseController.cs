@@ -5,7 +5,6 @@ using System.Security.Claims;
 
 namespace Tomi.WebAPI.Controllers
 {
-	[Route("api/[controller]")]
 	[ApiController]
 	public class BaseController : ControllerBase
 	{
