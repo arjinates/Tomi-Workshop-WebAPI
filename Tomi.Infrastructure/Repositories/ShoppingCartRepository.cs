@@ -7,8 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
+using Tomi.Domain.Settings;
 using Tomi.Infrastructure.Contexts;
-using Tomi.Infrastructure.Settings;
+
 
 namespace Tomi.Infrastructure.Repositories
 {

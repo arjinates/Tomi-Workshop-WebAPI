@@ -6,10 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Tomi.Application.Models;
 
-namespace Tomi.Application.Features.Products.Queries
+namespace Tomi.Application.Features.Coupons.Queries.GetAll
 {
-    public class GetProductByIdQuery : IRequest<ProductModel>
-	{
-		public string Id { get; set; }
-	}
+    public class GetAllCouponsQuery : IRequest<IEnumerable<CouponModel>>
+    {
+    }
 }

@@ -33,16 +33,16 @@ namespace Tomi.Application.Auth.Commands
                 var result = await _userManager.CreateAsync(user, request.Password);
                 if (result.Succeeded)
                 {
-                    return new Response<string>(user.Id.ToString(), message: $"User {user.Id} Registered");
+                    return new Response<string>(user.Id.ToString(), true, message: $"User {user.Id} Registered");
                 }
                 else
                 {
-                    return new Response<string>($"{result.Errors}");
+                    return new Response<string>(false,$"{result.Errors}");
                 }
             }
             else
             {
-                return new Response<string>($"Email {request.Email} is already registered.");
+                return new Response<string>(false,$"Email {request.Email} is already registered.");
             }
         }
     }

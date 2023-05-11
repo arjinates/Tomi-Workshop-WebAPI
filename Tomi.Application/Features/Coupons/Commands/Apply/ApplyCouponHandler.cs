@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Tomi.Domain.Enums.CouponEnums;
-using Tomi.Application.Features.Coupons.Commands;
 using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
-namespace Tomi.Application.Services.Handlers.Coupons
+namespace Tomi.Application.Features.Coupons.Commands.Apply
 {
     public class ApplyCouponHandler : IRequestHandler<ApplyCouponCommand, ApplyCouponModel>
     {
