@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using Tomi.Application.Enums.CouponEnums;
+using Tomi.Domain.Enums.CouponEnums;
 using Tomi.Application.Features.Coupons.Commands;
 using Tomi.Application.Models;
 using Tomi.Domain.Entities;

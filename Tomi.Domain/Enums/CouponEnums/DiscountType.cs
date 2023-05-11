@@ -1,4 +1,4 @@
-﻿namespace Tomi.Application.Enums.CouponEnums
+﻿namespace Tomi.Domain.Enums.CouponEnums
 {
     public enum DiscountType
     {
