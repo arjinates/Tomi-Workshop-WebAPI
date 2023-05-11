@@ -27,7 +27,7 @@ namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveAllItem
 
             await _shoppingCartRepository.DeleteAsync(shoppingCart.Id);
 
-            return new Response<string>(request.UserId, $"ShoppingCart successfully deleted.");
+            return new Response<string>(request.UserId, true, $"ShoppingCart successfully deleted.");
         }
     }
 }

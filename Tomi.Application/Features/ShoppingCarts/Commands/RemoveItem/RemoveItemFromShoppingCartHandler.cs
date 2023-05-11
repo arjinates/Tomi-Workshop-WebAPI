@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
+using Tomi.Application.ApiResponse;
+using Tomi.Application.Auth.Models;
 using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveItem
 {
-    public class RemoveItemFromShoppingCartHandler : IRequestHandler<RemoveItemCommand, ShoppingCartItemModel>
+    public class RemoveItemFromShoppingCartHandler : IRequestHandler<RemoveItemCommand, Response<string>>
     {
         private readonly IShoppingCartRepository _shoppingCartRepository;
         private readonly IProductRepository _productRepository;
@@ -19,7 +21,7 @@ namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveItem
             _mapper = mapper;
         }
 
-        public async Task<ShoppingCartItemModel> Handle(RemoveItemCommand request, CancellationToken cancellationToken)
+        public async Task<Response<string>> Handle(RemoveItemCommand request, CancellationToken cancellationToken)
         {
             var shoppingCart = await _shoppingCartRepository.GetByUserIdAsync(request.UserId);
             var product = await _productRepository.GetByIdAsync(request.ProductId);
@@ -51,19 +53,7 @@ namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveItem
             else
             {
                 await _shoppingCartRepository.UpdateAsync(shoppingCart.Id, shoppingCart);
-
-                var totalPrice = product.Price * existingCartItem.Count;
-                var totalCount = existingCartItem.Count;
-
-                var response = new ShoppingCartItemModel
-                {
-                    UserId = request.UserId,
-                    ProductId = product.Id,
-                    ProductTotalPrice = totalPrice,
-                    ProductCount = totalCount
-                };
-
-                return response;
+                return new Response<string>(true, message: "Item removed"); ;
             }
         }
 
