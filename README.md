@@ -102,6 +102,4 @@ Test senaryolarımızı gözden geçirin, eklemek istedikleriniz varsa pull requ
 ## Endpoints 
 Fonksiyonel ve geliştirmeye açık endpointlerimiz:
   
-![image](https://github.com/arjinates/TomiProject/assets/92892806/8924a4c3-8996-4001-840a-43b1dd94a58f)
-
-
+![image](https://github.com/arjinates/TomiProject/assets/92892806/d6e12e4a-38a8-4abf-a4be-fc7b52c87d3e)
