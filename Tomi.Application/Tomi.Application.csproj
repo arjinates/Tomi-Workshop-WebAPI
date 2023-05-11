@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Tomi.Domain\Tomi.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\ShoppingCarts\Commands\RemoveItemByQuantity\" />
-  </ItemGroup>
-
 </Project>

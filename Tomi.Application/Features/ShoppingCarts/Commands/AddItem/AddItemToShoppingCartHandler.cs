@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using MediatR;
 using MongoDB.Driver;
+using Tomi.Application.ApiResponse;
 using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
 namespace Tomi.Application.Features.ShoppingCarts.Commands.AddItem
 {
-    public class AddItemToShoppingCartHandler : IRequestHandler<AddItemCommand, ShoppingCartItemModel>
+    public class AddItemToShoppingCartHandler : IRequestHandler<AddItemCommand, Response<string>>
     {
         private readonly IShoppingCartRepository _shoppingCartRepository;
         private readonly IProductRepository _productRepository;
@@ -20,7 +21,7 @@ namespace Tomi.Application.Features.ShoppingCarts.Commands.AddItem
             _mapper = mapper;
         }
 
-        public async Task<ShoppingCartItemModel> Handle(AddItemCommand request, CancellationToken cancellationToken)
+        public async Task<Response<string>> Handle(AddItemCommand request, CancellationToken cancellationToken)
         {
             var shoppingCart = await _shoppingCartRepository.GetByUserIdAsync(request.UserId);
             var product = await _productRepository.GetByIdAsync(request.ProductId);
@@ -53,15 +54,7 @@ namespace Tomi.Application.Features.ShoppingCarts.Commands.AddItem
             var totalPrice = product.Price * existingCartItem.Count;
             var totalCount = existingCartItem.Count;
 
-            var response = new ShoppingCartItemModel
-            {
-                UserId = request.UserId,
-                ProductId = product.Id,
-                ProductTotalPrice = totalPrice,
-                ProductCount = totalCount
-            };
-
-            return response;
-        }
+			return new Response<string>(true, message: "Item added"); ;
+		}
     }
 }
