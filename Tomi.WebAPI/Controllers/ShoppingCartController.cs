@@ -5,6 +5,7 @@ using Tomi.Application.Features.ShoppingCarts.Commands;
 using Tomi.Application.Features.ShoppingCarts.Commands.AddItem;
 using Tomi.Application.Features.ShoppingCarts.Commands.RemoveAllItem;
 using Tomi.Application.Features.ShoppingCarts.Commands.RemoveItem;
+using Tomi.Application.Features.ShoppingCarts.Commands.RemoveItemByQuantity;
 using Tomi.Application.Features.ShoppingCarts.Queries;
 using Tomi.Application.Features.ShoppingCarts.Queries.GetAll;
 using Tomi.Domain.Entities;
@@ -42,7 +43,19 @@ namespace Tomi.WebAPI.Controllers
 			return Ok(await Mediator.Send(command));
 		}
 
-        [HttpDelete("clear-shopping-cart")]
+
+		[HttpDelete("remove-item-by-quantity")]
+		public async Task<IActionResult> RemoveItemByQuantityFromShoppingCart(string productId, int quantity)
+		{
+			var command = new RemoveItemByQuantityCommand();
+			command.UserId = UserId;
+			command.ProductId = productId;
+			command.Quantity = quantity;
+			return Ok(await Mediator.Send(command));
+		}
+
+
+		[HttpDelete("clear-shopping-cart")]
         public async Task<IActionResult> ClearShoppingCart()
         {
 			var command = new ClearShoppingCartCommand();
