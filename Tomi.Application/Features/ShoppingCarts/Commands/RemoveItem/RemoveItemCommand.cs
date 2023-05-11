@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Tomi.Application.Models;
 
-namespace Tomi.Application.Features.ShoppingCarts.Commands
+namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveItem
 {
     public class RemoveItemCommand : IRequest<ShoppingCartItemModel>
     {

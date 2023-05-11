@@ -1,4 +1,4 @@
-﻿namespace Tomi.Infrastructure.Settings
+﻿namespace Tomi.Domain.Settings
 {
     public class MongoDbSettings
     {

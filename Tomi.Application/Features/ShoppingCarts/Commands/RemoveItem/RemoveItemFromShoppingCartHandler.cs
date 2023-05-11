@@ -1,19 +1,18 @@
 ﻿using AutoMapper;
 using MediatR;
-using Tomi.Application.Features.ShoppingCarts.Commands;
 using Tomi.Application.Models;
 using Tomi.Domain.Entities;
 using Tomi.Domain.IRepositories;
 
-namespace Tomi.Application.Services.Handlers.ShoppingCarts
+namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveItem
 {
-    public class RemoveItemFromShoppingCart : IRequestHandler<RemoveItemCommand, ShoppingCartItemModel>
+    public class RemoveItemFromShoppingCartHandler : IRequestHandler<RemoveItemCommand, ShoppingCartItemModel>
     {
         private readonly IShoppingCartRepository _shoppingCartRepository;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public RemoveItemFromShoppingCart(IShoppingCartRepository shoppingCartRepository, IProductRepository productRepository, IMapper mapper)
+        public RemoveItemFromShoppingCartHandler(IShoppingCartRepository shoppingCartRepository, IProductRepository productRepository, IMapper mapper)
         {
             _shoppingCartRepository = shoppingCartRepository;
             _productRepository = productRepository;
@@ -60,7 +59,7 @@ namespace Tomi.Application.Services.Handlers.ShoppingCarts
                 {
                     UserId = request.UserId,
                     ProductId = product.Id,
-					ProductTotalPrice = totalPrice,
+                    ProductTotalPrice = totalPrice,
                     ProductCount = totalCount
                 };
 

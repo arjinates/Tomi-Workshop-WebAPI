@@ -19,7 +19,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tomi.Domain\Tomi.Domain.csproj" />
-    <ProjectReference Include="..\Tomi.Infrastructure\Tomi.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\ShoppingCarts\Commands\RemoveItemByQuantity\" />
   </ItemGroup>
 
 </Project>

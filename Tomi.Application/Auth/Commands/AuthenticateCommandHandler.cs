@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Tomi.Application.ApiResponse;
 using Tomi.Application.Auth.Models;
+using Tomi.Application.Services;
 using Tomi.Domain.Entities;
-using Tomi.Infrastructure.Services;
-using Tomi.Infrastructure.Settings;
+using Tomi.Domain.Settings;
 
 namespace Tomi.Application.Auth.Commands
 {
