@@ -76,8 +76,31 @@ CQRS, uygulamanın komutlarını (command) ve sorgularını (query) ayırmayı a
 ### Mediator Pattern
 
 Mediator pattern, birbirleriyle doğrudan etkileşim kurmak yerine aracı bir nesne (mediator) aracılığıyla etkileşim kuran nesneler arasındaki bağı azaltmayı hedefler. Bu sayede nesneler arasındaki bağımlılıklar azaltılır, kod daha esnek ve bakımı kolay hale gelir. Projemizde de Mediator pattern kullanarak CQRS (Command and Query Responsibility Segregation) mimarisini uyguladık. Bu sayede komutların ve sorguların ayrı ayrı ele alınmasını, doğrudan nesneler arasındaki bağımlılıkların azaltılmasını ve kodun daha esnek hale gelmesini sağladık. MediatR kütüphanesini kullanarak, bu yapıyı uygulamamızda kullanabildik.
+  
+## Unit Tests
+  
+Proje dökümantasyonunun bu bölümünde, Coupons, Products ve ShoppingCarts servislerine ait Unit Testlerden bahsedeceğiz. Unit Testler, her bir servisin doğru çalıştığını ve beklenen sonuçları ürettiğini doğrulamak için kullanılır. Bu testler, yazılımın kalitesini artırmak, hataları tespit etmek ve geliştirme sürecini desteklemek için önemlidir.
+  
+###Coupons Servisi Unit Testleri
 
+Coupons servisi için yazılan Unit Testler, kupon işlemlerinin doğru bir şekilde gerçekleştiğini kontrol eder. Senaryolar için gerekli giriş verileri sağlanır, servis çağrılır ve çıktıların beklenen sonuçlarla eşleşip eşleşmediği kontrol edilir.
+
+Unit Testlerin başarılı olması, Coupons servisinin beklenen işlevleri yerine getirdiğini ve hata durumlarında doğru davranışı sergilediğini gösterir. Geliştirme sürecinde, yeni senaryolar eklenerek daha kapsamlı testler yazılabilir ve hataların önlenmesi sağlanabilir. 
+  
+###Products Servisi Unit Testleri
+
+Products servisi için yazılan Unit Testler, ürün işlemlerinin doğru bir şekilde gerçekleşip gerçekleşmediğini kontrol etmemizi sağlar. Senaryolar test edilir, servis çağrılır ve çıktıların beklenen sonuçlarla eşleşip eşleşmediği kontrol edilir.
+
+Unit Testlerin başarılı olması, Products servisinin beklenen işlevleri yerine getirdiğini ve hata durumlarında doğru davranışı sergilediğini gösterir. Yeni ürün işlemleri eklendiğinde veya mevcut işlemler değiştirildiğinde, test senaryoları güncellenerek servisin hala doğru çalıştığından emin olunabilir.
+  
+###ShoppingCarts Servisi Unit Testleri
+
+ShoppingCarts servisi unit testleri servisin beklendiği gibi çalışıp çalışmadığını kontrol eder. Test senaryoları, ürün ekleme, ürün silme, sepeti temizleme gibi temel işlemleri kapsar. Her bir senaryo için gerekli giriş verileri sağlanır, servis çağrılır ve çıktıların beklenen sonuçlarla eşleşip eşleşmediği kontrol edilir.  
+
+Test senaryolarımızı gözden geçirin, eklemek istedikleriniz varsa pull request atmaktan çekinmeyin! Feedback'lerinizi bekliyoruz.
+  
 ## Endpoints 
+Fonksyonel ve geliştirmeye açık endpointlerimiz:
 ![image](https://github.com/arjinates/TomiProject/assets/92892806/8924a4c3-8996-4001-840a-43b1dd94a58f)
 
 
