@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tomi.Domain.Settings
+namespace Tomi.Infrastructure.Settings
 {
 	public class JwtSettings
 	{

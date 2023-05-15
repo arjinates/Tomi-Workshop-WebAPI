@@ -9,13 +9,13 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Tomi.Application;
 using Tomi.Domain.Entities;
-using Tomi.Domain.Settings;
 using Tomi.Infrastructure;
+using Tomi.Infrastructure.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<Tomi.Domain.Settings.MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
+builder.Services.Configure<Tomi.Infrastructure.Settings.MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 builder.Services.AddControllers();
 
