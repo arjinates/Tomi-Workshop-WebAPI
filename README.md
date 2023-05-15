@@ -6,7 +6,7 @@ Bu proje, bir workshop çalışmasıdır ve temel amacı, efektif çalışan ve 
 
 Projenin bir diğer önemli özelliği, Mocking Frameworks kullanarak Unit Test yazmayı kolaylaştırmasıdır. Bu sayede, geliştirilen her bir bileşenin ve fonksiyonun test edilmesi mümkün olacak ve kod kalitesi artırılacaktır. Ayrıca, JWT token authentication kullanıldığından, kullanıcıların güvenliği ve gizliliği de önem taşıyor. Bu nedenle, proje geliştirilirken bu konuda özel önlemler alınmıştır.
 
-Bir e-ticaret platformunun temel bir bileşeni olan projr kullanıcıların alışveriş deneyimini arttırmak için kullanılabilir. Projenin ana hedefleri arasında, ölçeklenebilir ve performanslı bir altyapı sunmak, kullanıcıların alışveriş sepeti işlemlerini yönetmelerine yardımcı olmak ve işlevselliği artırmak yer almaktadır.
+Bir e-ticaret platformunun temel bir bileşeni olan projemiz kullanıcıların alışveriş deneyimini arttırmak için kullanılabilir. Projenin ana hedefleri arasında, ölçeklenebilir ve performanslı bir altyapı sunmak, kullanıcıların alışveriş sepeti işlemlerini yönetmelerine yardımcı olmak ve işlevselliği artırmak yer almaktadır.
 
 Aynı zamanda workshop'da front-end ve mobil ile ilgilenen takım arkadaşlarımız bu back-end sistemini kullanarak uygulamalarını efektif şekilde geliştirmişlerdir. Onların projelerine erişmek için tıklayın: 
 
