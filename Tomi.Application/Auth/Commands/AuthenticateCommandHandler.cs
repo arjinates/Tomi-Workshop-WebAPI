@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Tomi.Application.ApiResponse;
 using Tomi.Application.Auth.Models;
-using Tomi.Application.Services;
 using Tomi.Domain.Entities;
-using Tomi.Domain.Settings;
+using Tomi.Infrastructure.Services;
+using Tomi.Infrastructure.Settings;
 
 namespace Tomi.Application.Auth.Commands
 {
@@ -27,12 +27,12 @@ namespace Tomi.Application.Auth.Commands
 			var user = await _userManager.FindByEmailAsync(request.Email);
 			if (user == null)
 			{
-				return new Response<AuthenticateResponse>(false, message: "Account not registered");
+				return new Response<AuthenticateResponse>(message: "Account not registered");
 			}
 			var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
 			if (!result.Succeeded)
 			{
-				return new Response<AuthenticateResponse>(false, message: "Password wrong");
+				return new Response<AuthenticateResponse>(message: "Password wrong");
 			}
 
 			var tokenService = new TokenService(_jwtSettings); // Inject JwtSettings
@@ -45,7 +45,7 @@ namespace Tomi.Application.Auth.Commands
 			response.Email = user.Email;
 			response.UserId = user.UserId; // UserId is now coming from the token
 
-			return new Response<AuthenticateResponse>(response,true, $"Authenticated {user.UserName}");
+			return new Response<AuthenticateResponse>(response, $"Authenticated {user.UserName}");
         }
     }
 }

@@ -1,19 +1,20 @@
 ﻿using AutoMapper;
 using MediatR;
 using Tomi.Application.ApiResponse;
+using Tomi.Application.Features.ShoppingCarts.Commands;
 using Tomi.Domain.IRepositories;
 
-namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveAllItem
+namespace Tomi.Application.Services.Handlers.ShoppingCarts
 {
-    public class ClearShoppingCartHandler : IRequestHandler<ClearShoppingCartCommand, Response<string>>
+    public class RemoveAllItemsFromShoppingCart : IRequestHandler<RemoveAllItemsCommand, Response<string>>
     {
         private readonly IShoppingCartRepository _shoppingCartRepository;
 
-        public ClearShoppingCartHandler(IShoppingCartRepository shoppingCartRepository)
+        public RemoveAllItemsFromShoppingCart(IShoppingCartRepository shoppingCartRepository)
         {
             _shoppingCartRepository = shoppingCartRepository;
         }
-        public async Task<Response<string>> Handle(ClearShoppingCartCommand request, CancellationToken cancellationToken)
+        public async Task<Response<string>> Handle(RemoveAllItemsCommand request, CancellationToken cancellationToken)
         {
             var shoppingCart = await _shoppingCartRepository.GetByUserIdAsync(request.UserId);
 
@@ -26,8 +27,8 @@ namespace Tomi.Application.Features.ShoppingCarts.Commands.RemoveAllItem
             shoppingCart.CouponId = null;
 
             await _shoppingCartRepository.DeleteAsync(shoppingCart.Id);
-
-            return new Response<string>(request.UserId, true, $"ShoppingCart successfully deleted.");
+           
+            return new Response<string>(request.UserId, $"ShoppingCart successfully deleted."); 
         }
     }
 }

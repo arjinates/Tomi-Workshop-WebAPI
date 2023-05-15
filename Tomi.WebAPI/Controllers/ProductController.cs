@@ -1,13 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Tomi.Application.Features.Products.Queries.GetAll;
-using Tomi.Application.Features.Products.Queries.GetById;
+using Tomi.Application.Features.Products.Queries;
 using Tomi.Domain.Entities;
 
 namespace Tomi.WebAPI.Controllers
 {
-    [ApiController]
+	[ApiController]
 	public class ProductController : BaseController
 	{
 

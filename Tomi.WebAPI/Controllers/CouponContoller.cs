@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tomi.Application.Features.Coupons.Commands;
-using Tomi.Application.Features.Coupons.Commands.Apply;
 using Tomi.Application.Features.Coupons.Queries;
-using Tomi.Application.Features.Coupons.Queries.GetAll;
 using Tomi.Application.Features.ShoppingCarts.Commands;
 
 namespace Tomi.WebAPI.Controllers

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Tomi.Application.Models;
 
-namespace Tomi.Application.Features.Coupons.Commands.Apply
+namespace Tomi.Application.Features.Coupons.Commands
 {
     public class ApplyCouponCommand : IRequest<ApplyCouponModel>
     {
